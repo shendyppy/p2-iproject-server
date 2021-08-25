@@ -8,9 +8,9 @@ class UserController {
       const { access_token } = req.headers;
       const payload = verifyToken(access_token);
 
-      const { id, nickname } = payload;
+      const { id, nickname, points } = payload;
 
-      res.status(200).json({ id, nickname });
+      res.status(200).json({ id, nickname, points });
     } catch (err) {
       next(err);
     }
@@ -22,12 +22,14 @@ class UserController {
         nickname: req.body.nickname,
         email: req.body.email,
         password: req.body.password,
+        points: 0,
       };
 
       const output = await User.create(data);
       res.status(201).json({
         id: output.id,
         nickname: output.nickname,
+        points: 0,
       });
     } catch (err) {
       next(err);
@@ -65,6 +67,7 @@ class UserController {
       const access_token = signToken({
         id: found.id,
         nickname: found.nickname,
+        points: found.points,
       });
       res.status(200).json({ access_token });
     } catch (err) {

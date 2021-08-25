@@ -11,6 +11,7 @@ module.exports = {
           nickname: "Jagoan",
           email: "jagoanneon@mail.com",
           password: hashPassword("jagoan123"),
+          points: 0,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
