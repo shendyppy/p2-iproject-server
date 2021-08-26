@@ -46,18 +46,6 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
-      incorrect_answers: {
-        type: DataTypes.ARRAY,
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            msg: `Incorrect answers can not be empty`,
-          },
-          notNull: {
-            msg: `Incorrect answers can not be empty`,
-          },
-        },
-      },
       question: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -67,18 +55,6 @@ module.exports = (sequelize, DataTypes) => {
           },
           notNull: {
             msg: `Question can not be empty`,
-          },
-        },
-      },
-      type: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          notEmpty: {
-            msg: `Type can not be empty`,
-          },
-          notNull: {
-            msg: `Type can not be empty`,
           },
         },
       },

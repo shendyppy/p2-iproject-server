@@ -20,15 +20,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      incorrect_answers: {
-        allowNull: false,
-        type: Sequelize.ARRAY,
-      },
       question: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
-      type: {
         allowNull: false,
         type: Sequelize.STRING,
       },
