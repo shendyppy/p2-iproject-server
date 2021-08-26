@@ -1,13 +1,8 @@
 const router = require("express").Router();
-const UserController = require("../controllers/UserController");
-const authentication = require("../middlewares/auth");
-const GoogleAuthController = require("../controllers/googleAuthController");
+const userRouter = require("./user");
+const triviaRouter = require("./trivia");
 
-router.post("/authgoogle", GoogleAuthController.getAuthGoogle);
-router.post("/register", UserController.register);
-router.post("/login", UserController.login);
-
-router.use(authentication);
-router.get("/info", UserController.getUserInfo);
+router.use("/", userRouter);
+router.use("/trivia", triviaRouter);
 
 module.exports = router;

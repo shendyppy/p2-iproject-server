@@ -46,14 +46,13 @@ io.on("connection", (socket) => {
     io.emit("broadcastUser", users);
 
     socket.emit("getRooms", rooms);
+    socket.emit("updatedRooms", rooms);
   });
 
   // create room to play with each other
   socket.on("createRoom", (data) => {
     let room = {
       roomName: data.roomName,
-      maxPlayer: data.maxPlayer,
-      maxPoint: data.maxPoint,
       users: [],
       admin: data.admin,
     };
@@ -67,9 +66,8 @@ io.on("connection", (socket) => {
     socket.join(data.roomName, () => {
       let roomIndex = rooms.findIndex((i) => i.roomName === data.roomName);
       rooms[roomIndex].users.push(data.nickname);
-      io.sockets.to(data.roomName).emit("detailRoom", rooms[roomIndex]);
 
-      console.log(rooms, `test test test`);
+      io.sockets.to(data.roomName).emit("detailRoom", rooms[roomIndex]);
 
       console.log(socket.rooms, `testing plis plis`);
     });
