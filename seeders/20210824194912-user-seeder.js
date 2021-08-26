@@ -8,9 +8,17 @@ module.exports = {
       "Users",
       [
         {
-          nickname: "Jagoan",
-          email: "jagoanneon@mail.com",
-          password: hashPassword("jagoan123"),
+          nickname: "test1",
+          email: "test1@mail.com",
+          password: hashPassword("test1"),
+          points: 0,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          nickname: "test2",
+          email: "test2@mail.com",
+          password: hashPassword("test2"),
           points: 0,
           createdAt: new Date(),
           updatedAt: new Date(),
