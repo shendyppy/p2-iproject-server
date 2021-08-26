@@ -1,4 +1,6 @@
-require("dotenv").config();
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 const express = require("express");
 const app = express();
@@ -72,8 +74,6 @@ io.on("connection", (socket) => {
       console.log(socket.rooms, `testing plis plis`);
     });
   });
-
-  // how to play
 });
 
 httpServer.listen(PORT, () => {

@@ -144,4 +144,43 @@ _Request Body_
 
 ---
 
+### POST /authgoogle
+
+> Login user with google
+
+_Request Params_
+
+```
+{
+    not needed
+}
+```
+
+_Request Header_
+
+```
+{
+  not needed
+}
+```
+
+_Request Body_
+
+```
+{
+    "email": "google email",
+    "password": "password"
+}
+```
+
+_Response (200)_
+
+```
+{
+    "access_token": "<your access token>"
+}
+```
+
+---
+
 ---

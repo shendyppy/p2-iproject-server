@@ -4,6 +4,8 @@
   "description": "Individual Portfolio Server",
   "main": "index.js",
   "scripts": {
+    "dev": "NODE_ENV=development npx nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,7 +13,7 @@
     "url": "git+https://github.com/shendyppy/p2-iproject-server.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Shendy Putra Perdana Yohansah",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/shendyppy/p2-iproject-server/issues"
@@ -21,12 +23,15 @@
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "google-auth-library": "^7.6.2",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.7.1",
     "sequelize": "^6.6.5",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0"
   }
 }
