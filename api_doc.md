@@ -2,7 +2,7 @@
 
 Trivia.io App is an application to play trivia quiz with your friends in real time and manage to chat with each others. This app has:
 
-- RESTful endpoint for user log
+- RESTful endpoint for user log, and trivia things
 - JSON formatted response
 
 &nbsp;
