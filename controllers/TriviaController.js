@@ -33,7 +33,7 @@ class TriviaController {
         UserId: id,
       };
       const output = await Trivia.create(data);
-      res.status(200).json(output);
+      res.status(201).json(output);
     } catch (err) {
       next(err);
     }
