@@ -29,23 +29,19 @@ socket.emit --> Broadcast only to self
 */
 
 io.on("connection", (socket) => {
-  console.log(`User connected`);
-
   // chatting feature
   socket.on("chatting", (data) => {
-    console.log(data, `ini keterima di server`);
-
     io.emit("broadcastMsg", data);
   });
 
   // populate who is in your room
   socket.on("logining", (user) => {
     users.push(user);
-    console.log(users, `user keterima di server`);
 
     io.emit("broadcastUser", users);
 
     socket.emit("getRooms", rooms);
+    socket.emit("updatedRooms", rooms);
   });
 
   // create room to play with each other
@@ -58,7 +54,7 @@ io.on("connection", (socket) => {
       admin: data.admin,
     };
     rooms.push(room);
-    console.log(rooms, "sampai server");
+
     io.emit("updatedRooms", rooms);
   });
 
@@ -67,11 +63,9 @@ io.on("connection", (socket) => {
     socket.join(data.roomName, () => {
       let roomIndex = rooms.findIndex((i) => i.roomName === data.roomName);
       rooms[roomIndex].users.push(data.nickname);
+
+      console.log("detailRoom", rooms[roomIndex]);
       io.sockets.to(data.roomName).emit("detailRoom", rooms[roomIndex]);
-
-      console.log(rooms, `test test test`);
-
-      console.log(socket.rooms, `testing plis plis`);
     });
   });
 });
